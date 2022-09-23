@@ -19,6 +19,6 @@ Basic Setup
 
 Run the application:
 
-.. code-block:: console
+.. code-block::
 
         python -m {{cookiecutter.app_name}} --help
