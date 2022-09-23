@@ -16,7 +16,7 @@ class Logger(_Logger):
     """ Message logger.
 
     """
-    LOGFMT = "[%(levelname)-8s] [%(name)-12s] [%(module)-12s] %(message)s"
+    LOGFMT = "[%(levelname)-8s] [%(module)-12s] %(message)s"
 
     def __init__(self, name=None):
         """ Initialize this logger.
