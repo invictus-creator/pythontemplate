@@ -4,7 +4,8 @@ This module defines a global configuration object. Other modules should use
 this object to store application-wide configuration values.
 
 """
-from yaml import safe_load
+import yaml
+from yaml import unsafe_load
 
 from .logger import logger
 
@@ -34,12 +35,21 @@ class YamlConfig(dict):
         """
         with open(path, "r") as stream:
             logger.info(f"Reading config data from '{path}'.")
-            data = safe_load(stream)
+            data = unsafe_load(stream)
 
         try:
             self.update(data)
         except TypeError:  # data is None
             logger.warning(f"Config file '{path}' is empty.")
+
+    def dump(self, path):
+        """ Dump data to YAML configuration files.
+
+        :param path: config file path to dump to
+        """
+        with open(path, 'w') as file:
+            logger.info(f"Dumping config data to {path}")
+            yaml.dump(self, file)
 
 
 config = YamlConfig()
