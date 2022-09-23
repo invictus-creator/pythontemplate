@@ -16,8 +16,8 @@ def main():
 
 # Setup config and logger using cli args
 cli_args = get_cli_args()
-config.load(cli_args.config_path)
 logger.start(cli_args.loglevel)
+config.load(cli_args.config_path)
 
 if __name__ == "__main__":
     raise SystemExit(main())
