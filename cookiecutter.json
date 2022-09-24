@@ -1,7 +1,7 @@
 {
 	"project_slug": "pyapp",
 	"project_url": "",
-	"app_name": "{{cookiecutter.project_slug}}",
+	"app_name": "{{cookiecutter.project_slug.lower()}}",
 	"cli_script": "{{cookiecutter.app_name}}",
 	"author_name": "",
 	"author_email": "",
