@@ -12,6 +12,9 @@
 
 .venv*/
 
+# Ignore dot env
+*.env
+
 # Ignore settings for various IDEs.
 
 .idea/
